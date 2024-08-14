@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$fontAll: Roboto;
+$bgc1: #960000;
+$bgc2: #161616;
+$bgc3: #e3e3e3;
+$textColor1: #dddddd;
+$textColor2: #161616;
+$textColor3: #d90000;
+$shdow1: #470000;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bgc2;
+    font-family: $fontAll;
+    color: $textColor1;
+}

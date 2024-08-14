@@ -1,0 +1,51 @@
+header {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+    .headLine {
+        background: rgb(150, 0, 0);
+        background: linear-gradient(11deg, rgba(150, 0, 0, 1) 0%, rgba(45, 0, 0, 1) 100%);
+        border-radius: 10px;
+        box-shadow: 0 0 10px $shdow1;
+        display: flex;
+        justify-content: center;
+
+        #logo {
+            display: block;
+            width: 100px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            // display: block;
+            margin: 20px;
+            // width: 100%;
+            text-shadow: 0 0 5px $shdow1;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .searchAera {
+        margin: 10px auto;
+        width: 90%;
+        background-color: $bgc3;
+        color: $textColor2;
+        height: 40px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px $shdow1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        label,
+        input {
+            margin: 10px;
+        }
+    }
+}

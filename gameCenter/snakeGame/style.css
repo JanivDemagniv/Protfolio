@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'VT323', monospace;
+    background-color: #414141;
+}
+
+h1 {
+    color: white;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    margin: 5px;
+    width: 400px;
+    height: 400px;
+    background-color: #cccccc;
+    border: 10px solid #333;
+}
+
+.scores {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+}
+
+#score {
+    color: #abb78a;
+}
+
+#score,
+#highScore {
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 10px 0;
+}
+
+.snake {
+    border: 1px dotted #00571c;
+    background-color: #00b62d;
+    border-radius: 20%;
+}
+
+
+
+.food {
+    background-color: #f00707;
+    border: 5px solid #f86f6f;
+}
+
+#instrucation-text {
+    position: absolute;
+    top: 40%;
+    color: #333;
+    width: 300px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 30px;
+    z-index: 50;
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.buttons {
+    width: 400px;
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        '. . arrowUp . .'
+        '. arrowLeft arrowDown arrowRight .'
+        '. spaceBar spaceBar spaceBar .';
+    gap: 5px;
+}
+
+#ArrowRight,
+#ArrowLeft,
+#ArrowUp,
+#ArrowDown,
+#Space {
+    height: 40px;
+}
+
+#ArrowRight {
+    grid-area: arrowRight;
+}
+
+#ArrowLeft {
+    grid-area: arrowLeft;
+}
+
+#ArrowUp {
+    grid-area: arrowUp;
+}
+
+#ArrowDown {
+    grid-area: arrowDown;
+}
+
+#Space {
+    grid-area: spaceBar;
+}
+
+@media (max-width:1000px) {
+    .buttons {
+        display: grid;
+    }
+}

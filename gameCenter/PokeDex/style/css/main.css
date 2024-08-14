@@ -1,0 +1,497 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #161616;
+  font-family: Roboto;
+  color: #dddddd;
+}
+
+.container {
+  width: 70vw;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.container #screen .pokeWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "pic name num  type";
+  gap: 10px;
+}
+.container #screen .pokeWrapper .pokePic {
+  grid-area: pic;
+}
+.container #screen .pokeWrapper .pokeName {
+  grid-area: name;
+}
+.container #screen .pokeWrapper .pokeNum {
+  grid-area: num;
+}
+.container #screen .pokeWrapper .pokeType {
+  grid-area: type;
+}
+.container #screen .pokeWrapperInfo {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "pic pic pic name num type" "pic pic pic stats stats stats" "cries sprits sprits sprits sprits sprits" "moves moves moves moves moves moves" "reset reset reset reset reset reset";
+}
+.container #screen .pokeWrapperInfo .pokePic {
+  grid-area: pic;
+}
+.container #screen .pokeWrapperInfo .pokeName2 {
+  grid-area: name;
+}
+.container #screen .pokeWrapperInfo .pokeNum {
+  grid-area: num;
+}
+.container #screen .pokeWrapperInfo .pokeType {
+  grid-area: type;
+}
+.container #screen .pokeWrapperInfo .PokeWheghiet {
+  grid-area: wheight;
+}
+.container #screen .pokeWrapperInfo .pokeEvo {
+  grid-area: evo;
+}
+.container #screen .pokeWrapperInfo .pokeStats {
+  grid-area: stats;
+}
+.container #screen .pokeWrapperInfo .pokeCries {
+  grid-area: cries;
+}
+.container #screen .pokeWrapperInfo .pokeSprits {
+  grid-area: sprits;
+}
+.container #screen .pokeWrapperInfo .pokeMoves {
+  grid-area: moves;
+}
+.container #screen .pokeWrapperInfo .reset {
+  grid-area: reset;
+}
+
+header {
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+header .headLine {
+  background: rgb(150, 0, 0);
+  background: linear-gradient(11deg, rgb(150, 0, 0) 0%, rgb(45, 0, 0) 100%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #470000;
+  display: flex;
+  justify-content: center;
+}
+header .headLine #logo {
+  display: block;
+  width: 100px;
+}
+header .headLine h1 {
+  font-size: 4rem;
+  margin: 20px;
+  text-shadow: 0 0 5px #470000;
+}
+header .headLine:hover {
+  cursor: pointer;
+}
+header .searchAera {
+  margin: 10px auto;
+  width: 90%;
+  background-color: #e3e3e3;
+  color: #161616;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #470000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .searchAera label,
+header .searchAera input {
+  margin: 10px;
+}
+
+#screen {
+  width: 100%;
+  height: auto;
+  background-color: #e3e3e3;
+  color: #161616;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-top: 170px;
+}
+#screen .pokeWrapper {
+  background-color: #cdcdcd;
+  width: 50%;
+  margin: 10px auto 10px;
+  border-radius: 10px;
+  padding: 10px;
+  border-bottom: 3px solid #d90000;
+  transition: all ease-in-out 0.5s;
+}
+#screen .pokeWrapper:hover {
+  background-color: #e3e2e2;
+}
+#screen .pokeWrapper div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#screen .pokeWrapper img {
+  width: 64px;
+}
+#screen .pokeWrapper .pokeName button {
+  border: none;
+  background-color: inherit;
+}
+#screen .pokeWrapper .pokeName button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#screen .pokeWrapperInfo {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  gap: 20px;
+  background-color: #161616;
+  border: 1px solid #e3e3e3;
+}
+#screen .pokeWrapperInfo div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #960000;
+  border: 1px solid #161616;
+  color: #dddddd;
+  border-radius: 20px;
+  padding: 10px;
+}
+#screen .pokeWrapperInfo div button {
+  border: none;
+  background-color: #960000;
+  color: #dddddd;
+}
+#screen .pokeWrapperInfo div button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+#screen .pokeWrapperInfo h4 {
+  font-size: 1rem;
+  text-decoration: underline;
+  font-weight: normal;
+  margin-bottom: 2px;
+}
+#screen .pokeWrapperInfo .pokePic img {
+  width: 250px;
+}
+#screen .pokeWrapperInfo .pokeSprits .arrg {
+  display: flex;
+  flex-direction: row;
+  border: none;
+}
+#screen .pokeWrapperInfo .pokeSprits .arrg span {
+  margin: 0 5px;
+}
+
+.loaderContainer {
+  background-color: #161616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.pokeball {
+  display: block;
+  margin: 0 auto;
+  width: 192px;
+  height: 192px;
+  background: radial-gradient(white 16px, black 17px 18px, white 19px 24px, black 25px 32px, transparent 33px), linear-gradient(to bottom, red 0 80px, black 81px 96px, white 97px 100%);
+  border-radius: 50%;
+  border: 8px solid black;
+  box-shadow: inset -16px -8px 0 0 rgba(0, 0, 0, 0.2);
+  animation: fall 0.5s ease-in-out 1s, shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3, catch 0.5s ease-out 5.25s forwards;
+}
+
+/* Animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  20% {
+    transform: translateX(-10px) rotate(-20deg);
+  }
+  30% {
+    transform: translateX(10px) rotate(20deg);
+  }
+  50% {
+    transform: translateX(-10px) rotate(-10deg);
+  }
+  60% {
+    transform: translateX(10px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-200%);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes catch {
+  to {
+    filter: saturate(0.8) brightness(0.8);
+  }
+}
+.fire {
+  display: inline-block;
+  background-color: red;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.grass {
+  display: inline-block;
+  background-color: green;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.water {
+  display: inline-block;
+  background-color: blue;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.poison {
+  display: inline-block;
+  background-color: purple;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.bug {
+  display: inline-block;
+  background-color: lightgreen;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #161616;
+  margin: 1.5px;
+}
+
+.flying {
+  display: inline-block;
+  background-color: skyblue;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #161616;
+  margin: 1.5px;
+}
+
+.normal {
+  display: inline-block;
+  background-color: darkkhaki;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #161616;
+  margin: 1.5px;
+}
+
+.electric {
+  display: inline-block;
+  background-color: yellow;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #161616;
+  margin: 1.5px;
+}
+
+.ground {
+  display: inline-block;
+  background-color: peru;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.fighting {
+  display: inline-block;
+  background-color: brown;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.psychic {
+  display: inline-block;
+  background-color: pink;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #161616;
+  margin: 1.5px;
+}
+
+.ice {
+  display: inline-block;
+  background-color: lightblue;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #161616;
+  margin: 1.5px;
+}
+
+.dragon {
+  display: inline-block;
+  background-color: darkblue;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.fairy {
+  display: inline-block;
+  background-color: lightpink;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #161616;
+  margin: 1.5px;
+}
+
+.dark {
+  display: inline-block;
+  background-color: darkslategrey;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.ghost {
+  display: inline-block;
+  background-color: darkmagenta;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+.steel {
+  display: inline-block;
+  background-color: silver;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #161616;
+  margin: 1.5px;
+}
+
+.rock {
+  display: inline-block;
+  background-color: grey;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  color: #dddddd;
+  margin: 1.5px;
+}
+
+@media (min-width: 451px) and (max-width: 960px) {
+  .container {
+    width: 95vw;
+  }
+  .container header .searchAera {
+    width: 100%;
+    height: 70px;
+  }
+  .container #screen .pokeWrapper {
+    width: 70%;
+  }
+  .container #screen .pokeWrapperInfo {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    height: auto;
+    width: 95vw;
+  }
+  .container header .searchAera {
+    width: 100%;
+    height: 70px;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .container header #searchNum {
+    display: block;
+    width: 120px;
+  }
+  .container #screen {
+    margin-top: 220px;
+  }
+  .container #screen .pokeWrapper {
+    width: 100%;
+  }
+  .container #screen .pokeWrapperInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .container #screen .pokeWrapperInfo .movesList {
+    width: 100%;
+    font-size: 0.7rem;
+  }
+}/*# sourceMappingURL=main.css.map */

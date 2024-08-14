@@ -1,0 +1,94 @@
+.container {
+    width: 70vw;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+
+
+    #screen {
+
+        .pokeWrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas:
+                "pic name num  type";
+            gap: 10px;
+
+            .pokePic {
+                grid-area: pic;
+            }
+
+            .pokeName {
+                grid-area: name;
+            }
+
+            .pokeNum {
+                grid-area: num;
+            }
+
+            .pokeType {
+                grid-area: type;
+            }
+        }
+
+        .pokeWrapperInfo {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-areas:
+                "pic pic pic name num type"
+                "pic pic pic stats stats stats"
+                "cries sprits sprits sprits sprits sprits"
+                "moves moves moves moves moves moves"
+                "reset reset reset reset reset reset";
+
+            .pokePic {
+                grid-area: pic;
+            }
+
+            .pokeName2 {
+                grid-area: name;
+            }
+
+            .pokeNum {
+                grid-area: num;
+            }
+
+            .pokeType {
+                grid-area: type;
+            }
+
+            .PokeWheghiet {
+                grid-area: wheight;
+            }
+
+            .pokeEvo {
+                grid-area: evo;
+            }
+
+            .pokeStats {
+                grid-area: stats;
+            }
+
+            .pokeCries {
+                grid-area: cries;
+            }
+
+            .pokeSprits {
+                grid-area: sprits;
+            }
+
+            .pokeMoves {
+                grid-area: moves;
+            }
+
+            .reset {
+                grid-area: reset;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+    <link rel="stylesheet" href="./style/css/main.css">
+    <script src="./app/main.js" type="module" defer async></script>
+    <!-- <script src="app/trying.js" defer async></script> -->
+</head>
+
+<body>
+    <div class="loaderContainer" id="loader">
+        <div class="pokeball"></div>
+    </div>
+    <div class="container">
+        <header>
+            <div class="headLine" id="headLine">
+                <img src="./img/logo.svg" alt="logo" id="logo">
+                <h1>PokeDex</h1>
+            </div>
+            <div id="searchAera" class="searchAera">
+                <label for="searchName">Name:</label>
+                <input type="text" id="searchName">
+                <label for="searchName">Number:</label>
+                <input type="number" min="0" max="1025" id="searchNum">
+                <label for="searchName">Type:</label>
+                <select name="selectType" id="searchType">
+                    <option class="selectType" value="grass">Grass</option>
+                    <option class="selectType" value="fire">Fire</option>
+                    <option class="selectType" value="water">Water</option>
+                    <option class="selectType" value="ice">Ice</option>
+                    <option class="selectType" value="electric">Electric</option>
+                    <option class="selectType" value="normal">Normal</option>
+                    <option class="selectType" value="flying">Flying</option>
+                    <option class="selectType" value="bug">Bug</option>
+                    <option class="selectType" value="poison">Poison</option>
+                    <option class="selectType" value="psychic">Psychic</option>
+                    <option class="selectType" value="ghost">Ghost</option>
+                    <option class="selectType" value="dark">Dark</option>
+                    <option class="selectType" value="fairy">Fairy</option>
+                    <option class="selectType" value="dragon">Dragon</option>
+                    <option class="selectType" value="fighting">Fighting</option>
+                    <option class="selectType" value="ground">Ground</option>
+                    <option class="selectType" value="rock">Rock</option>
+                    <option class="selectType" value="steel">Steel</option>
+                </select>
+            </div>
+        </header>
+        <div id="screen">
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
