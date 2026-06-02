@@ -6,21 +6,36 @@ async function fillPokemonArray(arr) {
     let newArr = [];
     let requests = [];
 
-    for (let i = 1; i <= 1025; i++) {
-        requests.push(
-            fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .catch(error => {
-                    console.error(`Failed to fetch data for Pokémon ID ${i}:`, error);
-                    return null;
-                })
-        );
+async function fillPokemonArray() {
+    const totalPokemons = 1025;
+    const chunkSize = 20;
+    let allPokemons = [];
+
+    async function fetchPokemon(id) {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            if (!response.ok) throw new Error(`Status: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error(`Failed to fetch Pokémon ID ${id}:`, error);
+            return null;
+        }
     }
+
+    for (let i = 1; i <= totalPokemons; i += chunkSize) {
+        const chunkRequests = [];
+
+        for (let j = i; j < i + chunkSize && j <= totalPokemons; j++) {
+            chunkRequests.push(fetchPokemon(j));
+        }
+
+        const chunkResults = await Promise.all(chunkRequests);
+
+        allPokemons.push(...chunkResults.filter(item => item !== null));
+    }
+    return allPokemons;
+}
+
 
     try {
         newArr = await Promise.all(requests);
