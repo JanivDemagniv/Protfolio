@@ -8,7 +8,7 @@ async function fillPokemonArray(arr) {
 
 async function fillPokemonArray() {
     const totalPokemons = 1025;
-    const chunkSize = 20;
+    const chunkSize = 40;
     let allPokemons = [];
 
     async function fetchPokemon(id) {
