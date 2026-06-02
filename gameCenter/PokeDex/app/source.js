@@ -2,35 +2,37 @@
 const pokemonArry = [];
 
 //becuase the api can only bring information about one subject at a time, the function create 1025 request to get the information
-async function fillPokemonArray(arr) {
-    let newArr = [];
-    let requests = [];
+async function fillPokemonArray() {
+    const totalPokemons = 1025;
+    const chunkSize = 40;
+    let allPokemons = [];
 
-    for (let i = 1; i <= 1025; i++) {
-        requests.push(
-            fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .catch(error => {
-                    console.error(`Failed to fetch data for Pokémon ID ${i}:`, error);
-                    return null; // Return null or some default value in case of an error
-                })
-        );
+    async function fetchPokemon(id) {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            if (!response.ok) throw new Error(`Status: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error(`Failed to fetch Pokémon ID ${id}:`, error);
+            return null;
+        }
     }
 
-    try {
-        newArr = await Promise.all(requests);
-        newArr = newArr.filter(item => item !== null); // Filter out any failed requests
-    } catch (error) {
-        console.error('Error during Promise.all:', error);
-    }
+    for (let i = 1; i <= totalPokemons; i += chunkSize) {
+        const chunkRequests = [];
 
-    return arr = JSON.parse(JSON.stringify(newArr));
+        for (let j = i; j < i + chunkSize && j <= totalPokemons; j++) {
+            chunkRequests.push(fetchPokemon(j));
+        }
+
+        const chunkResults = await Promise.all(chunkRequests);
+
+        allPokemons.push(...chunkResults.filter(item => item !== null));
+    }
+    return allPokemons;
 }
+
+
 
 //copy of the array to manipulate 
 let pokemonArr = [...await fillPokemonArray(pokemonArry)]
